@@ -10,7 +10,7 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = [./nvf-configuration.nix];
         }).neovim;
-    nixosConfigurations.nixos = nixpkgs.lib.nixos
+    nixosConfigurations.nixos = nixpkgs.lib.nixos {
       modules = [
         ./configuration.nix
         nvf.nixosModules.default

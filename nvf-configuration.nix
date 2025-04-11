@@ -1,11 +1,11 @@
-{pkgs,lib, ...};
+{pkgs,lib, ...}:
 
 {
     vim = {
         theme = {
             enable = true;
-            name = "catppucin";
-            style = "dark";
+            name = "catppuccin";
+            style = "mocha";
         };
 
         statusline.lualine.enable = true;
@@ -18,7 +18,7 @@
 
             nix.enable = true;
             ts.enable = true;
-            cpp.enable = true;
+            rust.enable = true;
         };
 
     };
