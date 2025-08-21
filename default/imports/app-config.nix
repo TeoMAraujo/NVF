@@ -6,9 +6,11 @@
         rSnos = "sudo nixos-rebuild switch --flake ~/NixOS/";
         rShm = "sudo home-manager switch --flake ~/NixOS/home-manager/";
     }
+    services.power-profiles-daemon.enable = false;
+
 # autocpufreq
     services.auto-cpufreq = {
-      enable = false;
+      enable = true;
       settings = {
         battery = {
           governor = "powersave";
@@ -20,10 +22,10 @@
         };
       };
     };
+
 # TLP
-    services.power-profiles-daemon.enable = false;
     services.tlp = {
-        enable = true;
+        enable = false;
         settings = {
             # profile
             CPU_SCALING_GOVERNOR_ON_AC = "performance";
@@ -45,6 +47,7 @@
                 # TLP_PERSISTENT_DEFAULT = 1;
         };
     };
+
 # Starship
     programs.starship = {
         enable = true;
